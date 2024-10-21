@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Calculator</title>
     <link rel="stylesheet" href="calculator.css">
 </head>
 
@@ -12,42 +12,44 @@
     <table>
         <tr>
             <th colspan="3">
-                <form>
-                    <label for="problem">Current problem: </label>
-                    <input type="number">
-                </form>
-                <form>
-                    <label for="answer">The answer is: </label>
-                    <input type="number">
-                </form>
+                <div>
+                    <p>Current problem: <span id="equation"></span></p>
+                </div>
+                
+                <div>
+                    <p>The answer is: <span id="answer"></span></p>
+                </div>
             </th>
-            <th><button type="button" id="history">View History</button></th>
+            <th><button type="button" id="button-history">View History</button></th>
         <tr>
-            <td><button type="button">0</button></td>
-            <td><button type="button">1</button></td>
-            <td><button type="button">2</button></td>
-            <td><button type="button">ce</button></td>
+            <td><button type="button" id="button-0" data-number="0">0</button></td>
+            <td><button type="button" id="button-1" data-number="1">1</button></td>
+            <td><button type="button" id="button-2" data-number="2">2</button></td>
+            <td><button type="button" id="button-ce" data-operation="ce">ce</button></td>
         </tr>
         <tr>
-            <td><button type="button">3</button></td>
-            <td><button type="button">4</button></td>
-            <td><button type="button">5</button></td>
-            <td><button type="button">-</button></td>
+            <td><button type="button" id="button-3" data-number="3">3</button></td>
+            <td><button type="button" id="button-4" data-number="4">4</button></td>
+            <td><button type="button" id="button-5" data-number="5">5</button></td>
+            <td><button type="button" id="button--" data-operation="-">-</button></td>
         </tr>
         <tr>
-            <td><button type="button">6</button></td>
-            <td><button type="button">7</button></td>
-            <td><button type="button">8</button></td>
-            <td><button type="button">/</button></td>
+            <td><button type="button" id="button-6" data-number="6">6</button></td>
+            <td><button type="button" id="button-7" data-number="7">7</button></td>
+            <td><button type="button" id="button-8" data-number="8">8</button></td>
+            <td><button type="button" id="button-/" data-operation="/">/</button></td>
         </tr>
         <tr>
-            <td><button type="button">9</button></td>
-            <td><button type="button">*</button></td>
-            <td><button type="button">+</button></td>
-            <td><button type="button">=</button></td>
+            <td><button type="button" id="button-9" data-number="9">9</button></td>
+            <td><button type="button" id="button-*" data-operation="*">*</button></td>
+            <td><button type="button" id="button-+" data-operation="+">+</button></td>
+            <td><button type="button" id="button-=" data-operation="=">=</button></td>
         </tr>
         </tr>
     </table>
+    
+    
+    <script src="calculatorScript.js"></script>
 </body>
 
 </html>
