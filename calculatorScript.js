@@ -1,6 +1,19 @@
 let mathProblem = ""; //variable that holds current problem
-let history = "";
+let history = [];
 //event listener taht listens for any click on the page
+document.getElementById("button-history").addEventListener("click", ()=> {
+    let historyDisplay = document.getElementById("equation");
+    if(history.length === 0)
+        historyDisplay.textContent = "No history available";
+    else{
+        let historyText = "";
+        for(let i = 0; i<history.length; i++){
+            historyText += history[i] + "\n";
+        }
+        historyDisplay.textContent = historyText;
+    }
+})
+
 document.addEventListener("click", (event) => {
     let itemThatWasClick = event.target
     //checks if item clicked is a button
@@ -23,11 +36,6 @@ document.addEventListener("click", (event) => {
 
                 mathProblem += itemThatWasClick.dataset.operation;
             }
-            else if (itemThatWasClick.matches("button-history")){
-
-                document.getElementById("equation").textContent = history;
-            }
-
             else {
                 updateAnswer();
             }
@@ -38,6 +46,8 @@ document.addEventListener("click", (event) => {
         randomColor();
     }
 })
+
+
 
 function clearEverything(mathProblem) {
     document.getElementById("equation").textContent = "";
